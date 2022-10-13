@@ -6,7 +6,11 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             type: DataTypes.INTEGER
         },
-        BillInfo: DataTypes.STRING
+        TotalCost: DataTypes.DECIMAL,
+        RoomCost: DataTypes.DECIMAL,
+        StaffCost: DataTypes.DECIMAL,
+        MedicineCost: DataTypes.DECIMAL
+
     })
 
     return Bill

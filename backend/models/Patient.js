@@ -3,12 +3,14 @@ module.exports = (sequelize, DataTypes) => {
         PatientId: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            required: true
         },
         // Personal Info
         Name: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            required: true
         },
         ContactNo: DataTypes.STRING(10),
         EmergencyContact: DataTypes.STRING(10),

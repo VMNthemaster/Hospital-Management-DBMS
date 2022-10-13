@@ -13,7 +13,8 @@ module.exports = (sequelize, DataTypes) => {
         isOccupied: {
             type: DataTypes.BOOLEAN,
             allowNull: false
-        }
+        },
+        RoomCharge: DataTypes.DECIMAL
 
     })
 

@@ -2,13 +2,15 @@ module.exports = (sequelize, DataTypes) => {
     const Doctor = sequelize.define("Doctor", {
        DoctorId: {
         primaryKey: true,
+        required: true,
         type : DataTypes.INTEGER,
         allowNull : false,
         autoIncrement: true
        },
        Name: {
         type:  DataTypes.STRING,
-        allowNull : false
+        allowNull : false,
+        required: true
        },
        PatientIds: {
         type: DataTypes.STRING,
