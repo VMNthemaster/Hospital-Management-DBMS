@@ -12,10 +12,6 @@ module.exports = (sequelize, DataTypes) => {
         allowNull : false,
         required: true
        },
-       PatientIds: {
-        type: DataTypes.STRING,
-        allowNull: false 
-       },
        Speciality: {
         type: DataTypes.STRING,
         allowNull: false

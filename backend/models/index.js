@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const process = require('process');
+const {HasMany}=require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
@@ -36,5 +37,9 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 // Associations
+db.Doctor.hasMany(db.Patient);
+db.Patient.hasOne(db.Doctor);
+db.Patient.hasOne(db.Bill);
+db.Patient.hasOne(db.Room);
 
 module.exports = db;

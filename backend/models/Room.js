@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Rooms = sequelize.define("Rooms", {
+    const Room = sequelize.define("Room", {
         Id: {
             primaryKey: true,
             type: DataTypes.INTEGER,
@@ -18,5 +18,5 @@ module.exports = (sequelize, DataTypes) => {
 
     })
 
-    return Rooms
+    return Room
 }
