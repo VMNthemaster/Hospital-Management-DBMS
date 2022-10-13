@@ -37,5 +37,4 @@ db.Sequelize = Sequelize;
 
 // Associations
 
-
 module.exports = db;

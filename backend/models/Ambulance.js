@@ -9,13 +9,8 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(10),
             allowNull: false
         },
-        GeneralInfo: {
-            type: {
-                vehicleName: DataTypes.STRING(25),
-                modelNumber: DataTypes.STRING(25)
-            },
-            allowNull: true
-        },
+        vehicleName: DataTypes.STRING(25),
+        modelNumber: DataTypes.STRING(25),
         isAvailable: {
             type: DataTypes.BOOLEAN,
             allowNull: false
