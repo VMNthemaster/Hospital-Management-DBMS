@@ -1,6 +1,10 @@
 import React, {} from 'react'
 import {useNavigate} from "react-router-dom"
 
+// for medicines tab, add search medicine route
+// for ambulance tab, update isAvaiable attribute form
+
+
 const LandingPage = () => {
     const navigate = useNavigate()
   return (
@@ -31,7 +35,7 @@ const LandingPage = () => {
               <h2 className="text-center text-white font-semibold font-serif">Add Patient</h2>
             </div>
             <div onClick={() => navigate('/patients/view')} className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
-              <h2 className="text-center text-white font-semibold font-serif ">View Patient</h2>
+              <h2 className="text-center text-white font-semibold font-serif ">View Patients</h2>
             </div>
           </div>
         </div>
@@ -60,7 +64,7 @@ const LandingPage = () => {
             <div className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
               <h2 className="text-center text-white font-semibold font-serif">Add ambulance</h2>
             </div>
-            <div className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
+            <div onClick={() => navigate('/ambulances/view')} className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
               <h2 className="text-center text-white font-semibold font-serif">Check Availabilty</h2>
             </div>
           </div>
@@ -75,7 +79,7 @@ const LandingPage = () => {
             <div className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
               <h2 className="text-center text-white font-semibold font-serif">Add Rooms</h2>
             </div>
-            <div className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer ">
+            <div onClick={() => navigate('/rooms/view')} className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer ">
               <h2 className="text-center text-white font-semibold font-serif">Check Availabilty</h2>
             </div>
           </div>
@@ -90,7 +94,7 @@ const LandingPage = () => {
             <div className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
               <h2 className="text-center text-white font-semibold font-serif">Add Bill</h2>
             </div>
-            <div className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
+            <div onClick={() => navigate('/bills/view')} className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
               <h2 className="text-center text-white font-semibold font-serif">View Bills</h2>
             </div>
           </div>

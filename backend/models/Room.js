@@ -4,7 +4,6 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             type: DataTypes.INTEGER,
             allowNull: false,
-            autoIncrement: true
         },
         type: {
             type: DataTypes.STRING,
@@ -14,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.BOOLEAN,
             allowNull: false
         },
-        RoomCharge: DataTypes.DECIMAL
+        RoomCharge: DataTypes.INTEGER
 
     })
 

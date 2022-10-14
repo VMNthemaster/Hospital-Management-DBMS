@@ -6,7 +6,7 @@ html {
 .bg {
   background-image: url('./assets/main-bg.jfif');
 
-  height: 100vh;
+  min-height: 100vh;
 
   background-position: center;
   background-repeat: no-repeat;

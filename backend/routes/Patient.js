@@ -29,6 +29,17 @@ router.post('/addPatient', async (req, res) => {
     res.status(201).json({ success: true, newPatient })
   })
 
+  router.patch('/updateBill', async (req, res) => {
+    const {billId, patientId} = req.body
+    try {
+      await Patient.update({BillId: billId},{ where: { PatientId: patientId }})
+    } catch (error) {
+      return res.status(500).json({ success: false, message: 'Internal Server Error' })
+    }
+
+    return res.status(200).json({success: true})
+  })
+
 
 
 module.exports = router
