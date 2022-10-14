@@ -17,18 +17,6 @@ module.exports = (sequelize, DataTypes) => {
         AdmittedOn: DataTypes.DATE,
         ReleasedOn: DataTypes.DATE,
         Disease: DataTypes.STRING,
-        DoctorId: {
-            type: DataTypes.INTEGER,
-            // foreignKey : true,
-            // references: {
-            //     model: 'Doctor',
-            //     referenceKey : 'DoctorId'
-            // }
-        },
-        BillId: {
-            type: DataTypes.INTEGER,
-        },
-        RoomId: DataTypes.INTEGER
 
     })
 

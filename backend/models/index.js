@@ -37,9 +37,8 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 // Associations
-db.Doctor.hasMany(db.Patient);
-db.Patient.hasOne(db.Doctor);
-db.Patient.hasOne(db.Bill);
-db.Patient.hasOne(db.Room);
+db.Bill.hasOne(db.Patient);
+db.Doctor.hasOne(db.Patient);
+db.Room.hasOne(db.Patient);
 
 module.exports = db;
