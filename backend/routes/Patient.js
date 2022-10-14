@@ -8,10 +8,26 @@ router.get('/', async (req, res) => {
     try {
         allPatients = await Patient.findAll()
     } catch (error) {
+        console.log(error)
         return res.status(500).json({success: false, message: 'Internal Server Error'})
     }
     return res.status(200).json({success: true, allPatients})
 })
+
+router.post('/addPatient', async (req, res) => {
+    const patient = req.body
+    let newPatient
+    try {
+      newPatient = await Patient.create(patient)
+    } catch (error) {
+      console.log(error)
+      return res
+        .status(500)
+        .json({ success: false, message: 'Internal Server Error' })
+    }
+  
+    res.status(201).json({ success: true, newPatient })
+  })
 
 
 

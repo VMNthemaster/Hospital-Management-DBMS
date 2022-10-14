@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const process = require('process');
+const {HasMany}=require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
@@ -34,5 +35,10 @@ Object.keys(db).forEach(modelName => {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+
+// Associations
+db.Bill.hasOne(db.Patient);
+db.Doctor.hasOne(db.Patient);
+db.Room.hasOne(db.Patient);
 
 module.exports = db;

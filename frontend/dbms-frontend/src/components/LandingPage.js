@@ -21,7 +21,7 @@ const LandingPage = () => {
           </div>
         </div>
 
-    {/* nurses */}
+    {/* patients */}
     <div className="patients w-[33%] h-[20vh] bg-[#bda5ed] flex flex-col rounded-t-md">
           <div className="title h-[25%] flex justify-center items-center border-2 border-black rounded-t-md">
             <h2 className=" text-center text-white font-semibold font-serif  ">Patients</h2>
@@ -30,7 +30,7 @@ const LandingPage = () => {
             <div className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
               <h2 className="text-center text-white font-semibold font-serif">Add Patient</h2>
             </div>
-            <div className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
+            <div onClick={() => navigate('/patients/view')} className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
               <h2 className="text-center text-white font-semibold font-serif ">View Patient</h2>
             </div>
           </div>
@@ -45,7 +45,7 @@ const LandingPage = () => {
             <div className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
               <h2 className="text-center text-white font-semibold font-serif">Add Medicine</h2>
             </div>
-            <div className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
+            <div onClick={() => navigate('/medicines/view')} className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
               <h2 className="text-center text-white font-semibold font-serif">View Medicines</h2>
             </div>
           </div>
