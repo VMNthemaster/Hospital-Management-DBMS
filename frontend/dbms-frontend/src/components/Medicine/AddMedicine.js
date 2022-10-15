@@ -61,7 +61,7 @@ const AddMedicine = () => {
   return (
     <div className="bg">
       <div className="flex flex-col w-1/2 justify-center items-center px-[2vw] py-[2vh] gap-x-[5vw] gap-y-[5vh] h-[100vh]">
-        <h2 className="text-3xl font-serif underline">Add Patient</h2>
+        <h2 className="text-3xl font-serif underline">Add Medicine</h2>
         <form className="w-[80%] flex flex-col px-3 py-4 border-2 border-black rounded-md gap-y-4 bg-gray-200">
           <div className="flex justify-center gap-x-2 items-center">
             <label className="font-serif text-[#117432] text-xl" htmlFor="Id">
