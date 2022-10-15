@@ -1,9 +1,6 @@
 import React, {} from 'react'
 import {useNavigate} from "react-router-dom"
 
-// for medicines tab, add search medicine route
-// for ambulance tab, update isAvaiable attribute form
-
 
 const LandingPage = () => {
     const navigate = useNavigate()

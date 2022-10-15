@@ -3,6 +3,11 @@ import axios from 'axios'
 
 const CheckAmbulanceAvailabity = () => {
     const [allAvailableAmbulances, setAllAvailableAmbulances] = useState([])
+    const [updateAvailability, setUpdateAvailability] = useState({
+      numberPlate: '',
+      isAvailable: ''
+    })
+    const [showMessage, setShowMessage] = useState(false)
 
     useEffect(() => {
       // write query here and display the data as table
@@ -21,7 +26,6 @@ const CheckAmbulanceAvailabity = () => {
       }
   
       getallMedicines().then((data) => {
-          console.log(data)
         if (data.success) {
           setAllAvailableAmbulances(data.allAmbulances)
         } else {
@@ -29,6 +33,46 @@ const CheckAmbulanceAvailabity = () => {
         }
       })
     }, [])
+
+    const handleChange = (e) => {
+      setUpdateAvailability(prevValue => {
+        return {
+          ...prevValue,
+          [e.target.name]: e.target.value
+        }
+      })
+    }
+
+    const sendRequestToBackend = async () => {
+      const url = `http://localhost:5000/ambulances/update`
+      const res = await axios.patch(url, {
+        numberPlate: updateAvailability.numberPlate,
+        isAvailable: updateAvailability.isAvailable
+      })
+      .catch((err) => {
+        return {
+          data: {
+            message: err.response.data.message,
+            success: err.response.data.success,
+          },
+        }
+      })
+      const data = await res.data
+      return data
+    }
+
+    const handleSubmit = (e) => {
+      e.preventDefault()
+      sendRequestToBackend().then(data => {
+        if(data.success){
+          setShowMessage(true)
+          setTimeout(() => {
+          setShowMessage(false)
+          }, 3000);
+        }
+      })
+
+    }
 
     return (
       <div className="bg">
@@ -49,6 +93,38 @@ const CheckAmbulanceAvailabity = () => {
                 })}
             </tbody>
           </table>
+          <h2 className="text-3xl font-serif underline">Update availability</h2>
+          <form className="w-[70%] flex flex-col px-3 py-4 border-2 border-black rounded-md gap-y-4 bg-gray-200">
+          <div className="flex justify-center gap-x-2 items-center">
+            <label className="font-serif text-[#8b6f16] text-xl" htmlFor="patientId">
+              Number Plate:{' '}
+            </label>
+            <input
+              onChange={(e) => handleChange(e)}
+              className="rounded-md outline-none px-1 py-1"
+              type="text"
+              name="numberPlate"
+              value={updateAvailability.numberPlate}
+            />
+          </div>
+          <div className="flex justify-center gap-x-2 items-center">
+            <label className="font-serif text-[#8b6f16] text-xl" htmlFor="billId">
+              Is Available:{' '}
+            </label>
+            <input
+              onChange={(e) => handleChange(e)}
+              className="rounded-md outline-none px-1 py-1"
+              type="text"
+              name="isAvailable"
+              value={updateAvailability.isAvailable}
+              placeholder='true/false'
+            />
+          </div>
+          <button onClick={handleSubmit} className="px-2 py-1 border-2 border-black w-[30%] mx-auto rounded-md bg-[#FCD144]"> 
+            Update
+          </button>
+          {showMessage && <h2 className='text-center'>Records updated</h2>}
+        </form>
         </div>
       </div>
     )

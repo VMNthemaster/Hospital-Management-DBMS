@@ -1,4 +1,5 @@
 const express = require('express')
+const { where } = require('sequelize')
 const {Room} = require('../models')
 
 const router = express.Router()
@@ -27,6 +28,18 @@ router.post('/addRoom', async (req, res) => {
   
     res.status(201).json({ success: true, newRoom })
   })
+
+router.patch('/update', async (req, res) => {
+  const {roomNo, isOccupied} = req.body
+  try {
+    await Room.update({isOccupied: isOccupied}, {where: {Id: roomNo}})
+  } catch (error) {
+    return res
+        .status(500)
+        .json({ success: false, message: 'Internal Server Error' })
+  }
+  res.status(201).json({ success: true })
+})
 
 
 

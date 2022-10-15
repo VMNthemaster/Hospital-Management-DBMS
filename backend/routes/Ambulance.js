@@ -28,6 +28,19 @@ router.post('/addAmbulance', async (req, res) => {
     res.status(201).json({ success: true, newAmbulance })
   })
 
+router.patch('/update', async (req, res) => {
+  const {numberPlate, isAvailable} = req.body
+  try {
+    await Ambulance.update({isAvailable: isAvailable}, {where: {NumberPlate: numberPlate}})
+  } catch (error) {
+    return res
+        .status(500)
+        .json({ success: false, message: 'Internal Server Error' })
+  }
+  res.status(201).json({ success: true })
+
+})
+
 
 
 module.exports = router
