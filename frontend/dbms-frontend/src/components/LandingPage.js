@@ -13,7 +13,7 @@ const LandingPage = () => {
             <h2 className=" text-center  text-white font-semibold font-serif ">Doctors</h2>
           </div>
           <div className="options flex h-[75%] ">
-            <div className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
+            <div onClick={() => navigate('/doctors/add')} className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
               <h2 className="text-center text-white font-semibold font-serif">Add Doctor</h2>
             </div>
             <div onClick={() => navigate('/doctors/view')} className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
@@ -28,7 +28,7 @@ const LandingPage = () => {
             <h2 className=" text-center text-white font-semibold font-serif  ">Patients</h2>
           </div>
           <div className="options flex h-[75%] ">
-            <div className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
+            <div onClick={() => navigate('/patients/add')} className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
               <h2 className="text-center text-white font-semibold font-serif">Add Patient</h2>
             </div>
             <div onClick={() => navigate('/patients/view')} className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
@@ -43,7 +43,7 @@ const LandingPage = () => {
             <h2 className=" text-center  text-white font-semibold font-serif ">Medicine</h2>
           </div>
           <div className="options flex h-[75%] ">
-            <div className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
+            <div onClick={() => navigate('/medicines/add')} className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
               <h2 className="text-center text-white font-semibold font-serif">Add Medicine</h2>
             </div>
             <div onClick={() => navigate('/medicines/view')} className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
@@ -58,7 +58,7 @@ const LandingPage = () => {
             <h2 className=" text-center  text-white font-semibold font-serif ">Ambulance</h2>
           </div>
           <div className="options flex h-[75%] ">
-            <div className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
+            <div onClick={() => navigate('/ambulances/add')} className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
               <h2 className="text-center text-white font-semibold font-serif">Add ambulance</h2>
             </div>
             <div onClick={() => navigate('/ambulances/view')} className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
@@ -73,7 +73,7 @@ const LandingPage = () => {
             <h2 className=" text-center  text-white font-semibold font-serif ">Rooms</h2>
           </div>
           <div className="options flex h-[75%] ">
-            <div className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
+            <div onClick={() => navigate('/rooms/add')} className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
               <h2 className="text-center text-white font-semibold font-serif">Add Rooms</h2>
             </div>
             <div onClick={() => navigate('/rooms/view')} className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer ">
@@ -88,7 +88,7 @@ const LandingPage = () => {
             <h2 className=" text-center  text-white font-semibold font-serif ">Bills</h2>
           </div>
           <div className="options flex h-[75%] ">
-            <div className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
+            <div onClick={() => navigate('/bills/add')} className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">
               <h2 className="text-center text-white font-semibold font-serif">Add Bill</h2>
             </div>
             <div onClick={() => navigate('/bills/view')} className="w-[50%] border-2 border-black h-full flex justify-center items-center cursor-pointer">

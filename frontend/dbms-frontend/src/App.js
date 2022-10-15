@@ -8,6 +8,13 @@ import ViewMedicines from './components/Medicine/ViewMedicines';
 import CheckAmbulanceAvailabity from './components/Ambulance/CheckAmbulanceAvailabity';
 import CheckRoomAvailability from './components/Rooms/CheckRoomAvailability';
 import ViewBills from './components/Bill/ViewBills';
+import AddDoctor from './components/Doctor/AddDoctor';
+import AddPatient from './components/Patient/AddPatient';
+import AddMedicine from './components/Medicine/AddMedicine';
+import AddBill from './components/Bill/AddBill';
+import AddAmbulance from './components/Ambulance/AddAmbulance';
+import AddRoom from './components/Rooms/AddRoom';
+
 
 
 function App() {
@@ -23,8 +30,13 @@ function App() {
                 <Route path="/bills/view" element={<ViewBills />} />
                 <Route path="/ambulances/view" element={<CheckAmbulanceAvailabity />} />
                 <Route path="/rooms/view" element={<CheckRoomAvailability />} />
-              
-              {/* <Route path='*' element={<PageNotFound />} /> */}
+
+                <Route path='/doctors/add' element={<AddDoctor /> } />
+                <Route path='/patients/add' element={<AddPatient />} />
+                <Route path='/medicines/add' element={<AddMedicine /> } />
+                <Route path='/bills/add' element={<AddBill /> } />
+                <Route path='/ambulances/add' element={<AddAmbulance /> } />
+                <Route path='/rooms/add' element={<AddRoom /> } />
           </Routes>
         </Router>
       </main>
